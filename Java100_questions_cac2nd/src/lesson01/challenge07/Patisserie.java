@@ -41,6 +41,64 @@
 
 package lesson01.challenge07;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Patisserie {
+	public static void main(String[] args) throws IOException {
+
+		int sit = 30;
+		int syo = 30;
+		int pis = 30;
+
+		System.out.println("たいへんお待たせしました。");
+		System.out.println("【ポエール・ネルメ】");
+		System.out.println("ただいまより開店です！！");
+
+		System.out.println("本日のおすすめ商品です。");
+
+		System.out.println("シトロン　\\250・・・残り" + sit + "個");
+		System.out.println("ショコラ　\\280・・・残り" + syo + "個");
+		System.out.println("ピスタージュ　\\320・・・残り" + pis + "個");
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("それぞれ何個ずつ買いますか？（最大30個まで）");
+
+		System.out.print("シトロン      >");
+		String citronBuyCountStr = br.readLine();
+		double citronBuyCount = Double.parseDouble(citronBuyCountStr);
+
+		System.out.print("ショコラ      >");
+		String chocolatBuyCountStr = br.readLine();
+		double chocolatBuyCount = Double.parseDouble(chocolatBuyCountStr);
+
+		System.out.print("ピスターシュ  >");
+		String pistacheBuyCountStr = br.readLine();
+		double pistacheBuyCount = Double.parseDouble(pistacheBuyCountStr);
+
+		System.out.println("シトロン     " + citronBuyCount + "個");
+		System.out.println("ショコラ     " + chocolatBuyCount + "個");
+		System.out.println("ピスターシュ " + pistacheBuyCount + "個");
+
+		System.out.println("\nをお買いあげですね。");
+		System.out.println("承りました。");
+
+		double total = citronBuyCount + chocolatBuyCount + pistacheBuyCount;
+		int sum = (int) ((250 * citronBuyCount) + (280 * chocolatBuyCount) + (320 * pistacheBuyCount));
+
+		System.out.println("合計個数　　" + total + "個");
+		System.out.println("合計金額　　" + sum + "円");
+		System.out.println("\nをお買いあげですね。");
+		System.out.println("承りました。");
+
+		System.out.println("本日のおすすめ商品です。");
+
+		System.out.println("シトロン　\\250・・・残り" + (int) (sit - citronBuyCount) + "個");
+		System.out.println("ショコラ　\\280・・・残り" + (int) (syo - chocolatBuyCount) + "個");
+		System.out.println("ピスタージュ　\\320・・・残り" + (int) (pis - pistacheBuyCount) + "個");
+
+	}
 
 }
